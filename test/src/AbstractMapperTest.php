@@ -59,6 +59,29 @@ class AbstractMapperTest extends PHPUnit_Framework_TestCase
         $this->assertAttributeEquals($expected, $property, $object);
     }
 
+    public function testMapWithDataFieldMissingIgnoresField()
+    {
+        $field = 'testField';
+        $method = 'setData';
+        $given = $expected = 'data value';
+
+        $object = $this->getMockBuilder(TestClass::class)
+            ->getMock();
+
+        $object->expects($this->never())
+            ->method('setData')
+            ->with($expected);
+
+        $instance = $this->getAbstractMapperInstance(TestClass::class, [
+            $field => [
+                AbstractMapping::MAPS_VIA => AbstractMapping::MAPS_VIA_METHOD,
+                AbstractMapping::MAPS_NAME => $method
+            ]
+        ]);
+
+        $instance->map([], $object);
+    }
+
     /**
      * @expectedException InvalidArgumentException
      */
