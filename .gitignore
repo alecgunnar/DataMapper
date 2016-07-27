@@ -1,0 +1,5 @@
+vendor/
+test/coverage/
+
+composer.lock
+phpunit.xml

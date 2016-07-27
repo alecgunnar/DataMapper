@@ -1,0 +1,22 @@
+{
+    "name": "alecgunnar/datamapper",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alec Carpenter",
+            "email": "alecgunnar@gmail.com"
+        }
+    ],
+    "require":{
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlecGunnar\\Data\\Mapper\\": "src/"
+        }
+    }
+}
