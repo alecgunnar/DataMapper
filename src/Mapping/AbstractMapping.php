@@ -31,7 +31,7 @@ abstract class AbstractMapping implements Serializable
     /**
      * @var string
      */
-    const CONSTUCTOR_METHOD = '__construct';
+    const CONSTRUCTOR_METHOD = '__construct';
 
     /**
      * @var string
@@ -119,7 +119,7 @@ abstract class AbstractMapping implements Serializable
      */
     protected function mapToMethod(string $from, string $method)
     {
-        if ($method == self::CONSTUCTOR_METHOD) {
+        if ($method == self::CONSTRUCTOR_METHOD) {
             throw new UnexpectedValueException(self::CANNOT_MAP_VIA_CONSTRUCTOR_EXCEPTION);
         }
 
